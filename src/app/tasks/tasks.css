@@ -1,0 +1,31 @@
+ul {
+    list-style: none;
+    padding-left: 1em;
+}
+li {
+    margin-bottom: 0.2em;
+}
+span {
+    padding-right: 100px;
+}
+#add-button {
+    margin-left: 1.5em;
+    padding: 0.5em;
+    border: 2px solid black;
+    background-color: gainsboro;
+}
+#add-button:hover {
+    background-color: rgb(198, 198, 198);
+}
+.remove-button {
+    border: 2px solid black;
+    background-color: gainsboro;
+}
+.remove-button:hover {
+    background-color: rgb(198, 198, 198);
+}
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    accent-color: rgb(198, 198, 198);
+}

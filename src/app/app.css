@@ -1,0 +1,13 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: gainsboro;
+}
+#main-page {
+    margin: 1em;
+    padding-bottom: 1em;
+}
+#main-page h1 {
+    margin-left: 0.5em;
+}

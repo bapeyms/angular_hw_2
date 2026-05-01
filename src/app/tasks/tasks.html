@@ -1,0 +1,11 @@
+<ul id="to-do-list">
+    <li *ngFor="let item of arrStr; let i = index">
+        <input type="checkbox" [(ngModel)]="item.done">
+        <span [style.text-decoration]="item.done ? 'line-through' : 'none'">
+            {{item.text}}
+        </span>
+
+        <button class="remove-button" (click)="removeTask(i)">Remove</button>
+    </li>
+</ul>
+<button id="add-button" (click)="addTask()">Add Task</button>
