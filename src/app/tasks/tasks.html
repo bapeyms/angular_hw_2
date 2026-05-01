@@ -4,8 +4,16 @@
         <span [style.text-decoration]="item.done ? 'line-through' : 'none'">
             {{item.text}}
         </span>
+        <img [src]="item.image" width="30" height="30">
 
         <button class="remove-button" (click)="removeTask(i)">Remove</button>
     </li>
 </ul>
+<div id="controls">
+    <select [(ngModel)]="selectedImage">
+        <option *ngFor="let img of images" [value]="img">
+            {{img}}
+        </option>
+    </select>
+</div>
 <button id="add-button" (click)="addTask()">Add Task</button>
