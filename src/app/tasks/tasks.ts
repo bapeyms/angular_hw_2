@@ -25,12 +25,12 @@ export class Tasks implements OnInit {
     this.arrStr.splice(index, 1);
   }
 
-  images: string[] = [
-    'reaction1.png',
-    'reaction2.png',
-    'reaction3.png'
+  images = [
+    {path: 'reaction1.png', label: 'Important'},
+    {path: 'reaction2.png', label: 'Not So Important'},
+    {path: 'reaction3.png', label: 'Not Important'}
   ];
-  selectedImage: string = this.images[0];
+  selectedImage: string = '';
 
   constructor() {}
 

@@ -11,9 +11,10 @@
 </ul>
 <div id="controls">
     <select [(ngModel)]="selectedImage">
-        <option *ngFor="let img of images" [value]="img">
-            {{img}}
+        <option value="" disabled selected>Select A Pic</option>
+        <option *ngFor="let img of images" [value]="img.path">
+            {{img.label}}
         </option>
     </select>
+    <button id="add-button" (click)="addTask()">Add Task</button>
 </div>
-<button id="add-button" (click)="addTask()">Add Task</button>
