@@ -29,7 +29,6 @@ export class Tasks implements OnInit {
   }
 
   addTask(){
-    console.log('WORKS');
     this.taskService.addTask({
       text: 'Task ' + (this.arrStr.length + 1),
       done: false,
