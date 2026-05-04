@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Logger } from './logger';
 
 export interface Task {
   text: string,
@@ -12,13 +13,17 @@ export interface Task {
 export class TaskService {
   private tasks: Task[] = [];
 
+  constructor(private logger: Logger) {}
+
   getTasks() {
     return this.tasks;
   }
   addTask(task: Task) {
+    this.logger.log('Task added: ' + task.text);
     this.tasks.push(task);
   }
   removeTask(index: number) {
+    this.logger.log('Task removed at index: ' + index);
     this.tasks.splice(index, 1);
   }
 }
