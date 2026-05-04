@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TaskService, Task } from '../task-service';
 
 @Component({
   selector: 'app-tasks',
@@ -11,19 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class Tasks implements OnInit {
 
-  arrStr: {text: string; done: boolean; image: string} [] = []
-
-  addTask(){
-    this.arrStr.push({
-      text: 'Task ' + (this.arrStr.length + 1),
-      done: false,
-      image: this.selectedImage
-    });
-  }
-
-  removeTask(index: number) {
-    this.arrStr.splice(index, 1);
-  }
+  arrStr: Task[] = []
 
   images = [
     {path: 'reaction1.png', label: 'Important'},
@@ -32,8 +21,21 @@ export class Tasks implements OnInit {
   ];
   selectedImage: string = '';
 
-  constructor() {}
+  constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
+    this.arrStr = this.taskService.getTasks();
+  }
+
+  addTask(){
+    this.taskService.addTask({
+      text: 'Task ' + (this.arrStr.length + 1),
+      done: false,
+      image: this.selectedImage
+    });
+  }
+
+  removeTask(index: number) {
+    this.taskService.removeTask(index);
   }
 }
