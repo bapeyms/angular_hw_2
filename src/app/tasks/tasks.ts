@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TaskService, Task } from '../task-service';
+import { TaskService, TasksServ } from '../task-service';
 import { Logger } from '../logger';
 
 @Component({
@@ -13,7 +13,7 @@ import { Logger } from '../logger';
 })
 export class Tasks implements OnInit {
 
-  arrStr: Task[] = []
+  arrStr: TasksServ[] = []
 
   images = [
     {path: 'reaction1.png', label: 'Important'},
@@ -29,6 +29,7 @@ export class Tasks implements OnInit {
   }
 
   addTask(){
+    console.log('WORKS');
     this.taskService.addTask({
       text: 'Task ' + (this.arrStr.length + 1),
       done: false,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Logger } from './logger';
 
-export interface Task {
+export interface TasksServ {
   text: string,
   done: boolean,
   image: string
@@ -11,14 +11,14 @@ export interface Task {
   providedIn: 'root',
 })
 export class TaskService {
-  private tasks: Task[] = [];
+  private tasks: TasksServ[] = [];
 
   constructor(private logger: Logger) {}
 
   getTasks() {
     return this.tasks;
   }
-  addTask(task: Task) {
+  addTask(task: TasksServ) {
     this.logger.log('Task added: ' + task.text);
     this.tasks.push(task);
   }
