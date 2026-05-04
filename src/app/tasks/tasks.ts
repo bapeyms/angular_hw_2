@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TaskService, Task } from '../task-service';
+import { Logger } from '../logger';
 
 @Component({
   selector: 'app-tasks',
